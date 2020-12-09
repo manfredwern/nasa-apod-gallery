@@ -1,0 +1,14 @@
+.image-card {
+    max-width: 400px;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+img[mat-card-image]  {
+    object-position: center;
+    height: 400px;
+    object-fit: cover;
+}
