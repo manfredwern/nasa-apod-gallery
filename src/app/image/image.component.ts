@@ -15,13 +15,17 @@ export class ImageComponent implements OnInit {
   constructor(private imgService: ImageService)  { }
 
   ngOnInit(): void {
-    this.imgService.requestPhoto();
-    
+    // this.imgService.requestPhoto();
+
     this.img$ = this.imgService.dayPhoto().pipe(
       tap(
         c => console.log(c)
       )
     );
+  }
+
+  onReadMore() {
+    this.imgService.activateOverlay();
   }
 
 }

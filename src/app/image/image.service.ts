@@ -19,4 +19,8 @@ export class ImageService {
     return this.apodService.getApod();
   }
 
+  activateOverlay() {
+    this.apodService.showOverlay();
+  }
+
 }

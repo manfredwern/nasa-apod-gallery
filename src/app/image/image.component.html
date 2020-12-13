@@ -1,37 +1,43 @@
 
 <ng-container *ngIf="(img$ | async) as image">
-
-
     <mat-card class="image-card">
-        <mat-card-header>
+        <!-- <mat-card-header>
           <mat-card-title>{{ image.title }}</mat-card-title>
           <mat-card-subtitle>{{ image.date | date: 'medium' }}</mat-card-subtitle>
-        </mat-card-header>
-        <div class="image-container">
+        </mat-card-header> -->
+        <div class="image-card-container">
+          <div class="image-container">
+              <ng-template [ngIf]="image.media_type === 'video'">
+                  <video width="320" height="180" controls>
+                      <source [src]="image.url" type="video/mp4">
+                      <source [src]="image.url" type="video/ogg">
+                    Your browser does not support the video tag.
+                    </video>
+              </ng-template>
+              <ng-template [ngIf]="image.media_type === 'image'">
+                  <img mat-card-image [src]="image.url" alt="Photo of the day" width="320" height="180">
+              </ng-template>
+          </div>
+          <mat-card-content>
+            <mat-card-title>{{ image.title }}</mat-card-title>
+            <mat-card-subtitle>{{ image.date | date: 'medium' }}</mat-card-subtitle>
+              <p class="content-p">{{ image.explanation }}</p>
+              <!-- <div class="d-flex justify-content-end">
+                <button mat-button>Read more</button>
+              </div> -->
+          </mat-card-content>
+          <mat-card-actions>
+            <!-- <span class="footer-p">{{ image.date | date: 'medium' }}</span> -->
+            <button mat-stroked-button (click)="onReadMore()">Read more</button>
 
-            <ng-template [ngIf]="image.media_type === 'video'">
-                <video width="320" height="240" controls>
-                    <source [src]="image.url" type="video/mp4">
-                    <source [src]="image.url" type="video/ogg">
-                  Your browser does not support the video tag.
-                  </video>
-            </ng-template>
-            <ng-template [ngIf]="image.media_type === 'image'">
-                <img mat-card-image [src]="image.url"  alt="Photo of the day">
-            </ng-template>
+            <div >
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </div>
+          </mat-card-actions>
+
         </div>
-        <mat-card-content>
-            <p>{{ image.explanation }}</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
       </mat-card>
-
-
-
 </ng-container>
 
-
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->

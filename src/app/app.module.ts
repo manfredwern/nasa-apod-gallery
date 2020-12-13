@@ -7,13 +7,15 @@ import { ImageComponent } from './image/image.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { DateSelectorComponent } from './date-selector/date-selector.component';
+import { ImageOverlayComponent } from './image-overlay/image-overlay.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageComponent,
-    DateSelectorComponent
+    DateSelectorComponent,
+    ImageOverlayComponent
   ],
   imports: [
     BrowserModule,

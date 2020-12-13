@@ -13,13 +13,11 @@ export class HttpService {
   constructor(private http: HttpClient, private apodService: ApodService) { }
 
   getPhotoOfTheDay() {
-    console.log('SOME PHOTO');
     return this.http.get(this.ApiUrl).pipe(share(),tap( (d: Apod) => this.apodService.updateApod(d)));
   }
   
   getPhotoFromDate(date) {
     return this.http.get(this.ApiUrlWithoutDate+date+'&hd=true').pipe(share(),tap( (d: Apod) => this.apodService.updateApod(d)));
-    console.log(date);
   }
 
   private get ApiUrl() {

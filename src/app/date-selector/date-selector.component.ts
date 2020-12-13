@@ -50,7 +50,6 @@ export class DateSelectorComponent implements OnInit {
     const now = moment();
     const day = moment(d);
     return now > day;
-    
   }
   
 

@@ -1,0 +1,10 @@
+
+
+<ng-container *ngIf="overlay$ | async">
+    <p>image-overlay works!</p>
+
+    <pre>{{ overlayContent$ | async | json }}</pre>
+
+
+    <button mat-button (click)="onCloseOverlay()">close</button>
+</ng-container>
