@@ -1,0 +1,32 @@
+
+<ng-container *ngIf="(img$ | async) as image">
+    <mat-card class="image-card">
+        <!-- <mat-card-header>
+          <mat-card-title>{{ image.title }}</mat-card-title>
+          <mat-card-subtitle>{{ image.date | date: 'medium' }}</mat-card-subtitle>
+        </mat-card-header> -->
+        <div class="image-card-container">
+          <div class="image-container">
+              <ng-template [ngIf]="image.media_type === 'video'">
+                <youtube-player [videoId]="videoId" height="236" width="420"></youtube-player>
+                  <!-- <video width="320" height="180" controls>
+                      <source [src]="image.url" type="video/mp4">
+                      <source [src]="image.url" type="video/ogg">
+                    Your browser does not support the video tag.
+                    </video> -->
+              </ng-template>
+              <ng-template [ngIf]="image.media_type === 'image'">
+                  <img mat-card-image [src]="image.url" alt="Photo of the day" width="320" height="180">
+              </ng-template>
+          </div>
+          <mat-card-content>
+            <mat-card-title>{{ image.title }}</mat-card-title>
+              <p class="content-p">{{ image.explanation }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-stroked-button (click)="onReadMore()">Read more</button>
+          </mat-card-actions>
+
+        </div>
+      </mat-card>
+</ng-container>
