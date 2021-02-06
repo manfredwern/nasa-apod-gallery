@@ -1,12 +1,20 @@
+<mat-grid-list cols="2" rowHeight="320px">
+    <mat-grid-tile colspan="2">
+        <div>
+            <h1>Astronomy Picture of the Day</h1>
+            <p>Imagery from NASA</p>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
 
-
-<div id="main-container">
-    <div class="col col-sm-12">
+<mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile>
         <app-date-selector></app-date-selector>
-    </div>
-    <div class="col col-sm-12">
+    </mat-grid-tile>
+    <mat-grid-tile>
         <app-image></app-image>
-    </div>
-    <app-image-overlay></app-image-overlay>
-</div>
+    </mat-grid-tile>
 
+</mat-grid-list>
+
+<app-image-overlay></app-image-overlay>

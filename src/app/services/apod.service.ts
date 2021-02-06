@@ -8,7 +8,7 @@ const initialApod: Apod = {
   media_type: "image",
   service_version: "v1",
   title: "Lorem ipsum dolor sit amet",
-  url: "https://picsum.photos/200/300"
+  url: "https://picsum.photos/1920/1080"
 }
 
 @Injectable({

@@ -52,21 +52,14 @@ export class DateSelectorComponent implements OnInit {
     return now > day;
   }
   
-
   constructor(private dsService: DateSelectorService) { }
 
-  ngOnInit(): void {
-    console.log(this.date.format('YYYY[-]MM[-]DD'));
-  }
+  ngOnInit(): void {}
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.events.push(`${type}: ${event.value}`);
-    console.log(`${type}: ${event.value}`);
     const d = this.convertDateString(event.value)
-    console.log('moment: ', d);
-
     this.dsService.getPhotoByDate(d).pipe(first()).subscribe(noop);
-
   }
 
   private convertDateString(date) {

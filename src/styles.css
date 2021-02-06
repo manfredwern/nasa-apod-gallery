@@ -1,13 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: grey ; }
+body,
+.mat-body, .mat-body-1, .mat-typography { margin: 0; font-family: 'Poppins', sans-serif; background-color:#fafafa; }
 
 body * {
     box-sizing: border-box;
 }
 
+h1,
+.mat-h1, .mat-headline, .mat-typography h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: 3em;
+}
+
 .container {
     width: 100%;
-    display: block‚;
+    display: block;
+    position: relative;
 }
+
+mat-grid-list.mat-grid-list {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mat-card,
+.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab,
+.mat-input-element,
+.mat-form-field,
+.mat-datepicker-content,
+.mat-calendar {
+    font-family: 'Poppins', sans-serif;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 5px;
+}
+

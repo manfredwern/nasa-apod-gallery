@@ -8,11 +8,12 @@
         <div class="image-card-container">
           <div class="image-container">
               <ng-template [ngIf]="image.media_type === 'video'">
-                  <video width="320" height="180" controls>
+                <youtube-player [videoId]="videoId" height="236" width="420"></youtube-player>
+                  <!-- <video width="320" height="180" controls>
                       <source [src]="image.url" type="video/mp4">
                       <source [src]="image.url" type="video/ogg">
                     Your browser does not support the video tag.
-                    </video>
+                    </video> -->
               </ng-template>
               <ng-template [ngIf]="image.media_type === 'image'">
                   <img mat-card-image [src]="image.url" alt="Photo of the day" width="320" height="180">
@@ -20,24 +21,12 @@
           </div>
           <mat-card-content>
             <mat-card-title>{{ image.title }}</mat-card-title>
-            <mat-card-subtitle>{{ image.date | date: 'medium' }}</mat-card-subtitle>
               <p class="content-p">{{ image.explanation }}</p>
-              <!-- <div class="d-flex justify-content-end">
-                <button mat-button>Read more</button>
-              </div> -->
           </mat-card-content>
           <mat-card-actions>
-            <!-- <span class="footer-p">{{ image.date | date: 'medium' }}</span> -->
             <button mat-stroked-button (click)="onReadMore()">Read more</button>
-
-            <div >
-              <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button>
-            </div>
           </mat-card-actions>
 
         </div>
       </mat-card>
 </ng-container>
-
-<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->

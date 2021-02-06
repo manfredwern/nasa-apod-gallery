@@ -1,6 +1,10 @@
 .image-card {
     max-width: 420px;
     padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 1px 7px rgba(0,0,0,.05);
+    border: 0;
 }
 
 .image-card div.image-card-container {
@@ -10,7 +14,7 @@
 
 .image-container {
     width: 100%;
-    height: 180px;
+    height: 240px;
     overflow: hidden;
     margin-bottom: 16px;
 }
@@ -19,7 +23,7 @@ img[mat-card-image]  {
     width: 100%;
     margin: 0;
     object-position: center;
-    height: 180px;
+    height: 240px;
     object-fit: cover;
 }
 
@@ -29,8 +33,8 @@ mat-card-header .mat-card-header-text {
 
 mat-card {
     border-radius: 5px;
-  
     max-height: 482px;
+  
 }
 
 mat-card-title {
@@ -65,11 +69,3 @@ mat-card-actions {
     overflow: hidden;
 }
 
-.d-flex {
-    display: flex;
-    flex-direction: row;
-}
-
-.justify-content-end {
-    justify-content: flex-end;
-}

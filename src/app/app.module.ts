@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { DateSelectorComponent } from './date-selector/date-selector.component';
 import { ImageOverlayComponent } from './image-overlay/image-overlay.component';
-
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { ImageOverlayComponent } from './image-overlay/image-overlay.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
