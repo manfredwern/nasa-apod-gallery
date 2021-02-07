@@ -1,27 +1,34 @@
 # NasaApodGallery
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.28.
+This project is intended for learning purposes only. 
 
-## Development server
+Discover the Astronomy picture of the day provided by NASA. You are able to travel back in time when you check the photo of the day by using the date picker and selecting a specific date you want to go back to.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Enjoy the magnificent photos!
 
-## Code scaffolding
+## Project Resources
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Packages
 
-## Build
+Here are the tools that helped me build this project:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ - Angular
+ - Angular Material 
+ - Bootstrap
+ - Moment.js
 
-## Running unit tests
+### APIs
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Below are the API endpoints used to build this project.
 
-## Running end-to-end tests
+NASA API: [https://api.nasa.gov/](https://api.nasa.gov/)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Random Image API: [https://picsum.photos/](https://picsum.photos/)
 
-## Further help
+Random Text API: [http://metaphorpsum.com/](http://metaphorpsum.com/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Development
+
+You can run the project locally using the command `ng serve` or `npm run start`. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Thank you for visiting!

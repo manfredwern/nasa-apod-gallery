@@ -1,20 +1,34 @@
-<mat-grid-list cols="2" rowHeight="320px">
-    <mat-grid-tile colspan="2">
-        <div>
-            <h1>Astronomy Picture of the Day</h1>
-            <p>Imagery from NASA</p>
+<div class="container pt-5">
+    <div class="row mt-5">
+        <div class="col d-flex justify-content-around align-items-center">
+            <div>
+                <h1 class="display-1">Astronomy Picture of the Day</h1>
+                <p>Imagery from NASA</p>
+         
+            </div>
         </div>
-    </mat-grid-tile>
-</mat-grid-list>
+    </div>
+    <div class="row mt-5">
+        <div class="col d-flex justify-content-around align-items-center">
+            <app-date-selector></app-date-selector>
+        </div>
+        <div class="col d-flex justify-content-around align-items-center">
+            <app-image></app-image>
+        </div>
+    </div>
 
-<mat-grid-list cols="2" rowHeight="1:1">
-    <mat-grid-tile>
-        <app-date-selector></app-date-selector>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <app-image></app-image>
-    </mat-grid-tile>
-
-</mat-grid-list>
+    <div class="row">
+        <div class="col text-center mt-5">
+            <figure class="mt-5">
+                <blockquote class="blockquote">
+                  <p>I’m just a simple man trying to make my way in the universe.</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Jango Fett
+                </figcaption>
+              </figure>
+        </div>
+    </div>
+</div>
 
 <app-image-overlay></app-image-overlay>

@@ -1,53 +1,38 @@
-
-
 <ng-template [ngIf]="overlay$ | async">
-
-    <div class="overlay" [class.overlay--show]="overlayContent$ | async">
-
-        <div class="main-container">
-
-            <ng-container *ngIf="overlayContent$ | async as image">
-                <mat-card class="image-card">
-                    <!-- <mat-card-header>
-                      <mat-card-title>{{ image.title }}</mat-card-title>
-                      <mat-card-subtitle>{{ image.date | date: 'medium' }}</mat-card-subtitle>
-                    </mat-card-header> -->
-                    <div class="image-card-container">
-                      <div class="image-container">
-                          <ng-template [ngIf]="image.media_type === 'video'">
-                            <!-- <iframe width="560" height="315" [src]="image.url" frameborder="0" allowfullscreen></iframe> -->
-                              <!-- <video width="320" height="180" controls>
-                                  <source [src]="image.url" type="video/mp4">
-                                  <source [src]="image.url" type="video/webm">
-                                    <source [src]="image.url" type="video/ogg">
-                                Your browser does not support the video tag.
-                                </video> -->
-                          </ng-template>
-                          <ng-template [ngIf]="image.media_type === 'image'">
-                              <img mat-card-image [src]="image.url" alt="Photo of the day" width="320" height="auto">
-                          </ng-template>
-                      </div>
-                      <mat-card-content>
-                        <mat-card-title>{{ image.title }}</mat-card-title>
-                        <!-- <mat-card-subtitle>{{ image.date | date: 'medium' }}</mat-card-subtitle> -->
-                          <p class="content-p">{{ image.explanation }}</p>
-                          <!-- <div class="d-flex justify-content-end">
-                            <button mat-button>Read more</button>
-                          </div> -->
-                      </mat-card-content>
-                      <mat-card-actions>
-                        <div class="d-flex justify-content-between">
-                            <span class="footer-p">{{ image.date | date: 'medium' }}</span>
-                            <button mat-button (click)="onCloseOverlay()">close</button>
-                        </div>
-        
-                      </mat-card-actions>
-            
-                    </div>
-                  </mat-card>
-            </ng-container>
-            
+  <div class="overlay" [class.overlay--show]="overlayContent$ | async">
+    <ng-container *ngIf="overlayContent$ | async as image">
+      <div class="modal" [class.overlay--show]="overlayContent$ | async" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">{{ image.title }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                (click)="onCloseOverlay()"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col">
+                  <figure class="figure text-center">
+                    <ng-template [ngIf]="image.media_type === 'video'">
+                      <youtube-player [videoId]="image.url" height="360" width="640"></youtube-player>
+                    </ng-template>
+                    <ng-template [ngIf]="image.media_type === 'image'">
+                      <img class="figure-img img-fluid rounded image-container" [src]="image.url" alt="Photo of the day"
+                        width="320" height="auto">
+                    </ng-template>
+                    <figcaption class="figure-caption text-start">{{ image.date | date: 'medium' }}</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p class="mt-2">{{ image.explanation }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-
+      </div>
+    </ng-container>
+  </div>
 </ng-template>

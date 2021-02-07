@@ -8,12 +8,11 @@ import { ImageService } from './image.service';
 @Component({
   selector: 'app-image',
   templateUrl: './image.component.html',
-  styleUrls: ['./image.component.css']
+  styleUrls: ['./image.component.scss']
 })
 export class ImageComponent implements OnInit {
 
   img$: Observable<any>;
-  videoId: string;
   private apiLoaded = false;
 
   constructor(private imgService: ImageService)  { }
@@ -26,16 +25,7 @@ export class ImageComponent implements OnInit {
       this.apiLoaded = true;
     }
 
-    this.img$ = this.imgService.dayPhoto().pipe(
-      tap(
-        (res: Apod) => { console.log(res); 
-          if (res.media_type === 'video' && res.url.match(/youtube/)) {
-            this.videoId = res.url.match(/embed\/(\S+)\?.*/)[1];
-            console.log(this.videoId);
-          }
-        }
-      )
-    );
+    this.img$ = this.imgService.dayPhoto();
   }
 
   onReadMore() {

@@ -1,0 +1,35 @@
+
+.card {
+    max-width: 420px;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 1px 7px rgba(0,0,0,.05);
+    border: 0;
+    border-radius: 5px;
+    max-height: 482px;
+}
+
+.card-img-container {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.card-img-top   {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    object-position: center;
+    height: 240px;
+    object-fit: cover;
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
