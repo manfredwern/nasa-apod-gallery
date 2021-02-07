@@ -4,11 +4,10 @@ import { delay } from 'rxjs/operators';
 import { Apod } from '../interfaces/apod.interface';
 import { ImageOverlayService } from './image-overlay.service';
 
-
 @Component({
   selector: 'app-image-overlay',
   templateUrl: './image-overlay.component.html',
-  styleUrls: ['./image-overlay.component.css']
+  styleUrls: ['./image-overlay.component.scss']
 })
 export class ImageOverlayComponent implements OnInit {
 

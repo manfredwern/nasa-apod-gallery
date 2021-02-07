@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { tap } from 'rxjs/operators';
 import { ApodService } from '../services/apod.service';
 
 @Injectable({

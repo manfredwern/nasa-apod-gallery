@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { share, tap } from 'rxjs/operators';
+import { first, share, tap } from 'rxjs/operators';
 import { environment } from '../../../src/environments/environment';
 import { Apod } from '../interfaces/apod.interface';
 import { ApodService } from './apod.service';
@@ -13,11 +13,18 @@ export class HttpService {
   constructor(private http: HttpClient, private apodService: ApodService) { }
 
   getPhotoOfTheDay() {
-    return this.http.get(this.ApiUrl).pipe(share(),tap( (d: Apod) => this.apodService.updateApod(d)));
+    return this.http.get(this.ApiUrl).pipe(share(),tap( (resData: Apod) => this.apodService.updateApod(resData)));
   }
   
   getPhotoFromDate(date) {
-    return this.http.get(this.ApiUrlWithoutDate+date+'&hd=true').pipe(share(),tap( (d: Apod) => this.apodService.updateApod(d)));
+    return this.http.get(this.ApiUrlWithoutDate+date+'&hd=true').pipe(share(),tap( (resData: Apod) => this.apodService.updateApod(resData)));
+  }
+
+  getRandomParagraph() {
+    this.http.get('http://metaphorpsum.com/paragraphs/1/4', {responseType: 'text'}).pipe(first()).subscribe(
+      (resTest: string) => {
+        this.apodService.setDummyApodDataWithRandomText(resTest);
+      });
   }
 
   private get ApiUrl() {

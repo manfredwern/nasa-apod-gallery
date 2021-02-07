@@ -9,6 +9,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { DateSelectorComponent } from './date-selector/date-selector.component';
 import { ImageOverlayComponent } from './image-overlay/image-overlay.component';
 import {YouTubePlayerModule} from '@angular/youtube-player';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
