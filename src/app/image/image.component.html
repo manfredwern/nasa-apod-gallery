@@ -1,6 +1,6 @@
 
 <ng-container *ngIf="(img$ | async) as image">
-      <div class="card">
+      <div class="card shadow-lg">
         <div class="card-img-container">
           <ng-template [ngIf]="image.media_type === 'video'">
             <youtube-player [videoId]="image.url" height="236" width="420"></youtube-player>
