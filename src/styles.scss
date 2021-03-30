@@ -3,12 +3,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
 
-html, body { height: 100%; }
+html, body { height: 100%; position: relative; }
 body,
 .mat-body, .mat-body-1, .mat-typography { margin: 0; font-family: 'Poppins', sans-serif; background-color:#fafafa; }
 
 body * {
     box-sizing: border-box;
+}
+
+body::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    background-image: url('./assets/space-background.png');
+    background-repeat: repeat;
+    background-blend-mode: lighten;
 }
 
 h1,
